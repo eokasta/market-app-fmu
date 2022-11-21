@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import br.fmu.appentrega.Adaptador.AdaptadorCategoria;
 import br.fmu.appentrega.Domain.CategoryDomain;
 import br.fmu.appentrega.R;
 
@@ -29,9 +30,12 @@ private RecyclerView recyclerViewCategoryList;
 
         ArrayList<CategoryDomain> category=new ArrayList<>();
         category.add(new CategoryDomain("Pizza", "cat_1"));
-        category.add(new CategoryDomain("Hamburguer", "cat_2"));
+        category.add(new CategoryDomain("Lanches", "cat_2"));
         category.add(new CategoryDomain("Hotdog", "cat_3"));
         category.add(new CategoryDomain("Bebida", "cat_4"));
         category.add(new CategoryDomain("Donut", "cat_5"));
+
+        adapter = new AdaptadorCategoria(category);
+        recyclerViewCategoryList.setAdapter(adapter);
     }
 }
