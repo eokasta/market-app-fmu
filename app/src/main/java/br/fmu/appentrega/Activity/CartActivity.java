@@ -1,9 +1,11 @@
-package br.fmu.appentrega;
+package br.fmu.appentrega.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import br.fmu.appentrega.R;
 
 public class CartActivity extends AppCompatActivity {
 
