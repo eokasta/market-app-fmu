@@ -9,6 +9,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import br.fmu.appentrega.Adaptador.AdaptadorCategoria;
+import br.fmu.appentrega.Adaptador.AdaptadorPopular;
 import br.fmu.appentrega.Domain.CategoryDomain;
 import br.fmu.appentrega.Domain.ComidaDomain;
 import br.fmu.appentrega.R;
@@ -22,6 +23,7 @@ private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
         setContentView(R.layout.activity_main);
 
         recyclerViewCategory();
+        recyclerViewPopular();
     }
 
     private void recyclerViewCategory(){
@@ -42,10 +44,14 @@ private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private void recyclerViewPopular(){
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerViewPopularList = findViewById(R.id.recyclerView2);
+        recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<ComidaDomain> comidaList=new ArrayList<>();
-        comidaList.add(new ComidaDomain("Pizza de Pepperoni", "pizza1", "fatias de pepperoni, muçarela, orégano, molho de tomate", 9.76));
-        comidaList.add(new ComidaDomain("X Burguer", "burguer", "Carne, queijo Gouda, Molho especial, alface, tomate", 8.79));
-        comidaList.add(new ComidaDomain("Pizza vegetáriana", "pizza2","Óleo de oliva", 10.13));
+        comidaList.add(new ComidaDomain("Pizza de Pepperoni", "pizza1", "fatias de pepperoni, muçarela, orégano, molho de tomate", 9.00));
+        comidaList.add(new ComidaDomain("X Burguer", "burger", "Carne, queijo Gouda, Molho especial, alface, tomate", 8.50));
+        comidaList.add(new ComidaDomain("Pizza vegetariana", "pizza2","Óleo de oliva, azeitonas pretas, tomate cereja, orégano, manjericão", 8.50));
+
+        adapter2 = new AdaptadorPopular(comidaList);
+        recyclerViewPopularList.setAdapter(adapter2);
     }
 }

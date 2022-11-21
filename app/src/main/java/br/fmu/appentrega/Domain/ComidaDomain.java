@@ -4,21 +4,21 @@ public class ComidaDomain {
     private String title;
     private String pic;
     private String description;
-    private Double fee;
+    private Double preco;
     private int numberInCart;
 
-    public ComidaDomain(String title, String pic, String description, Double fee) {
+    public ComidaDomain(String title, String pic, String description, Double preco) {
         this.title = title;
         this.pic = pic;
         this.description = description;
-        this.fee = fee;
+        this.preco = preco;
     }
 
-    public ComidaDomain(String title, String pic, String description, Double fee, int numberInCart) {
+    public ComidaDomain(String title, String pic, String description, Double preco, int numberInCart) {
         this.title = title;
         this.pic = pic;
         this.description = description;
-        this.fee = fee;
+        this.preco = preco;
         this.numberInCart = numberInCart;
     }
 
@@ -46,12 +46,12 @@ public class ComidaDomain {
         this.description = description;
     }
 
-    public Double getFee() {
-        return fee;
+    public Double getPreco() {
+        return preco;
     }
 
-    public void setFee(Double fee) {
-        this.fee = fee;
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
     public int getNumberInCart() {
