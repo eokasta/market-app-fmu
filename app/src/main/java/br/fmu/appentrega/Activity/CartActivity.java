@@ -62,8 +62,8 @@ public class CartActivity extends AppCompatActivity {
     private void initView() {
         recyclerViewList=findViewById(R.id.recyclerView);
         totalprecoTxt=findViewById(R.id.totalprecoTxt);
-        freteTxt=findViewById(R.id.freteTxt);
         deliveryTxt=findViewById(R.id.deliveryTxt);
+        freteTxt=findViewById(R.id.freteTxt);
         totalTxt=findViewById(R.id.totalTxt);
         emptyTxt=findViewById(R.id.emptyTxt);
         scrollView=findViewById(R.id.scrollView2);
@@ -92,15 +92,15 @@ public class CartActivity extends AppCompatActivity {
 
     private void CalculateCart(){
         double percentTax = 0.02;
-        double delivery = 10;
+        double frete = 10;
 
         tax = Math.round((managementCart.getTotalPreco()+percentTax)*100)/100;
-        double total = Math.round((managementCart.getTotalPreco()+ tax +delivery)*100)/100;
+        double total = Math.round((managementCart.getTotalPreco()+ tax +frete)*100)/100;
         double itemTotal = Math.round(managementCart.getTotalPreco()*100)/100;
 
         totalprecoTxt.setText("$" + itemTotal);
-        freteTxt.setText("$"+ tax);
-        deliveryTxt.setText("$"+delivery);
+        deliveryTxt.setText("$"+ tax);
+        freteTxt.setText("$"+frete);
         totalTxt.setText("$"+total);
 
 
