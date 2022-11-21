@@ -9,9 +9,9 @@ import br.fmu.appentrega.R;
 
 public class CartActivity extends AppCompatActivity {
 
-
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
+    private ManagementCart managementCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

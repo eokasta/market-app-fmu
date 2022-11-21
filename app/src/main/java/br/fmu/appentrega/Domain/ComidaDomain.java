@@ -1,6 +1,8 @@
 package br.fmu.appentrega.Domain;
 
-public class ComidaDomain {
+import java.io.Serializable;
+
+public class ComidaDomain implements Serializable {
     private String title;
     private String pic;
     private String description;

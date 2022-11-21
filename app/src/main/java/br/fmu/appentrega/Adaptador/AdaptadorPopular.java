@@ -1,5 +1,7 @@
 package br.fmu.appentrega.Adaptador;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import br.fmu.appentrega.Activity.ShowDetailActivity;
 import br.fmu.appentrega.Domain.ComidaDomain;
 import br.fmu.appentrega.R;
 
@@ -30,13 +33,22 @@ public class AdaptadorPopular extends RecyclerView.Adapter<AdaptadorPopular.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdaptadorPopular.ViewHolder holder, int position) {
         holder.titulo.setText(popularComida.get(position).getTitle());
         holder.preco.setText(String.valueOf(popularComida.get(position).getPreco()));
 
         int drawableResourceId=holder.itemView.getContext().getResources().getIdentifier(popularComida.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.pic);
+
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                intent.putExtra("object", popularComida.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
