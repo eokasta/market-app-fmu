@@ -6,10 +6,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import br.fmu.appentrega.Domain.ComidaDomain;
+import br.fmu.appentrega.Interface.ChangeNumberItemsListener;
 
 public class ManagementCart {
-    private Context context;
-    private TinyDB tinyDB;
+    private static Context context;
+    private static TinyDB tinyDB;
 
 
     public ManagementCart(Context context){
@@ -33,11 +34,11 @@ public class ManagementCart {
         }else{
             listFood.add(item);
         }
-        tinyDB.putListObject("CardList", listFood);
+        tinyDB.putListObject("CartList", listFood);
         Toast.makeText(context,"Adicionado a seu carrinho", Toast.LENGTH_SHORT).show();
     }
 
-    public ArrayList<ComidaDomain> getListCart(){
+    public static ArrayList<ComidaDomain> getListCart(){
         return tinyDB.getListObject ("CartList");
     }
 
@@ -46,7 +47,7 @@ public class ManagementCart {
         tinyDB.putListObject("CartList", listFood);
         changeNumberItemsListener.changed();
     }
-    public void minusNumberFood(ArrayList<ComidaDomain> listfood, int position, changeNumberItemsListener changeNumberItemsListener){
+    public void minusNumberFood(ArrayList<ComidaDomain>listfood, int position, ChangeNumberItemsListener changeNumberItemsListener){
         if (listfood.get(position).getNumberInCart()==1){
             listfood.remove(position);
         }else{
@@ -60,7 +61,7 @@ public class ManagementCart {
         ArrayList<ComidaDomain> listfood=getListCart();
         double preco=0;
         for (int i = 0; i < listfood.size(); i++){
-            preco=preco+(listfood.get(i)getPreco()*listfood.get(i).getNumberInCart());
+            preco=preco+(listfood.get(i).getPreco()*listfood.get(i).getNumberInCart());
         }
         return preco;
     }
