@@ -1,4 +1,4 @@
-package br.fmu.appentrega.Domain;
+package br.fmu.appentrega.domain;
 
 import java.io.Serializable;
 

@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/pop_1" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titleCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/picCart"
-        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/titleCart"
         app:srcCompat="@drawable/minus" />
 
     <TextView
@@ -75,9 +75,9 @@
         android:text="0"
         android:textColor="#373b54"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintBottom_toBottomOf="@+id/titleCart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/title" />
+        app:layout_constraintTop_toTopOf="@+id/titleCart" />
 
     <TextView
         android:id="@+id/textView21"
